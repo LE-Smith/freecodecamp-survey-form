@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="styles.css" rel="stylesheet" type="text/css" />
+    <script
+      src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"
+      defer
+    ></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <main id="form-container">
+      <header>
+        <h1 id="title">Survey Form</h1>
+      </header>
+      <p id="description">the desription of the form</p>
+      <form action="#" id="survey-form" autocomplete="off">
+        <div class="input-container">
+          <label class="label-main" id="name-label" for="name">Name</label>
+          <input
+            class="input-field"
+            type="text"
+            id="name"
+            required
+            placeholder="your name"
+          />
+        </div>
+
+        <div class="input-container">
+          <label class="label-main" id="email-label" for="email">Email</label>
+          <input
+            class="input-field"
+            type="email"
+            id="email"
+            required
+            placeholder="your email address"
+          />
+        </div>
+
+        <div class="input-container">
+          <label class="label-main" id="number-label" for="number"
+            >Number</label
+          >
+          <input
+            class="input-field"
+            type="number"
+            id="number"
+            min="0"
+            max="100"
+            placeholder="how satisfied are you?"
+          />
+        </div>
+
+        <div class="input-container">
+          <label class="label-main" for="dropdown"
+            >What is your favourite color?</label
+          >
+          <select class="input-field" name="dropdown" id="dropdown">
+            <option value="red" selected>red</option>
+            <option value="green">green</option>
+            <option value="blue">blue</option>
+            <option value="other">other</option>
+          </select>
+        </div>
+
+        <div class="input-container">
+          <p class="label-main">What's your gender?</p>
+          <div class="input-option">
+            <input id="gender-male" type="radio" name="gender" value="male" />
+            <label for="gender-male">male</label>
+          </div>
+
+          <div class="input-option">
+            <input
+              id="gender-female"
+              type="radio"
+              name="gender"
+              value="female"
+            />
+            <label for="gender-female">female</label>
+          </div>
+
+          <div class="input-option">
+            <input id="gender-other" type="radio" name="gender" value="other" />
+            <label for="gender-other">other</label>
+          </div>
+        </div>
+
+        <div class="input-container">
+          <p class="label-main">What are your hobbies?</p>
+          <div class="input-option">
+              <input
+              type="checkbox"
+              name="hobbies"
+              id="hobbies-sport"
+              value="sport"
+              />
+              <label for="hobbies-sport">sport</label>
+          </div>
+
+          <div class="input-option">
+              <input
+              type="checkbox"
+              name="hobbies"
+              id="hobbies-drawing"
+              value="drawing"
+              />
+              <label for="hobbies-drawing">drawing</label>
+          </div>
+
+          <div class="input-option">
+              <input
+              type="checkbox"
+              name="hobbies"
+              id="hobbies-walking"
+              value="walking"
+              />
+              <label for="hobbies-walking">walking</label>
+          </div>
+        </div>
+
+        <div class="input-container">
+          <label class="label-main" for="comments">your comments:</label>
+          <textarea
+            name="comments"
+            id="comments"
+            cols="30"
+            rows="10"
+          ></textarea>
+        </div>
+
+        <button type="submit" id="submit">Submit</button>
+      </form>
+    </main>
+  </body>
+</html>

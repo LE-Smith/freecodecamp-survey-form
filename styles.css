@@ -1,3 +1,12 @@
+/* Variables */
+:root {
+  --Color-PrimaryOpacity: rgba(54, 62, 87, 0.95);
+  --Color-Primary: rgba(54, 62, 87);
+  --Color-Bright: white;
+  --Color-Focus: rgb(146, 226, 250);
+  --Color-NotValid: red;
+}
+
 *,
 *::before,
 *::after {
@@ -7,37 +16,51 @@
 }
 
 html {
-  width: 100%;
-  height: 100%;
   font-family: sans-serif;
 }
 
 body {
   font-size: 100%;
-  width: 100vw;
-  height: 100vh;
+}
+
+.bg {
+  width: 100%;
+  height: 100%;
   background: url(./abstract-3291293_1280.jpg) no-repeat;
   background-size: cover;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -100;
 }
 
 #form-container {
-  /* background-color: rgba(255, 0, 0, 0.194); */
-  width: 100%;
+  width: 50%;
   margin: 3rem auto;
+  z-index: 1;
 }
 
 #title,
 #description {
   text-align: center;
+  color:  var(--Color-Primary, rgba(54, 62, 87));
+  text-transform: uppercase;
+  font-size: 3rem;
+}
+
+#description {
+  font-size: 1.2rem;
 }
 
 form {
   margin-top: 2rem;
-  background-color: rgb(54, 62, 87);
+  background-color: var(--Color-PrimaryOpacity, rgba(54, 62, 87, 0.95));
   padding: 2rem;
   display: flex;
   flex-direction: column;
-  color: white;
+  color: var(--Color-Bright, white);
   border-radius: 5px;
 }
 
@@ -57,6 +80,7 @@ form {
   font-size: 1rem;
   border-radius: 5px;
   border: none;
+  background-color: var(--Color-Bright, white);
 }
 
 .input-option {
@@ -69,13 +93,12 @@ input[type='radio'] {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  background-color: rgb(54, 62, 87);
-  color: green;
+  background-color: var(--Color-PrimaryOpacity, rgba(54, 62, 87, 0.95));
   height: 1rem;
   width: 1rem;
   margin-right: 1rem;
   border-radius: 50%;
-  border: 1px solid white;
+  border: 1px solid var(--Color-Bright, white);
   position: relative;
 }
 
@@ -83,12 +106,11 @@ input[type='checkbox'] {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  background-color: rgb(54, 62, 87);
-  color: green;
+  background-color: var(--Color-PrimaryOpacity, rgba(54, 62, 87, 0.95));
   height: 1rem;
   width: 1rem;
   margin-right: 1rem;
-  border: 1px solid white;
+  border: 1px solid var(--Color-Bright, white);
   position: relative;
 }
 
@@ -107,10 +129,8 @@ input[type='checkbox']:active {
 
 *:focus,
 button:hover {
-  box-shadow: 0 0 6px 3px rgb(146, 226, 250);
+  box-shadow: 0 0 6px 3px var(--Color-Focus, rgb(146, 226, 250));
 }
-
-
 
 input[type='radio']:checked::before {
   content: '';
@@ -120,7 +140,7 @@ input[type='radio']:checked::before {
   left: 4px;
   right: 4px;
   bottom: 4px;
-  background-color: white;
+  background-color: var(--Color-Bright, white);
   position: absolute;
 }
 
@@ -131,7 +151,7 @@ input[type='checkbox']:checked::before {
   left: 3px;
   right: 3px;
   bottom: 3px;
-  background-color: white;
+  background-color: var(--Color-Bright, white);
   position: absolute;
 }
 
@@ -141,6 +161,7 @@ input[type='checkbox']:checked::before {
   padding: 1rem;
   font-family: sans-serif;
   font-size: 1rem;
+  background-color: var(--Color-Bright, white);
 }
 
 #submit {
@@ -151,24 +172,23 @@ input[type='checkbox']:checked::before {
   margin-top: 1rem;
   border: none;
   text-transform: uppercase;
-  background-color: rgb(54, 62, 87);
-  border: 1px solid white;
-  color: white;
+  background-color: var(--Color-Primary, rgb(54, 62, 87));
+  border: 1px solid var(--Color-Bright, white);
+  color: var(--Color-Bright, white);
   cursor: pointer;
 }
 
 #submit:disabled {
-  background-color: rgb(54, 62, 87);
-  border: 1px solid red;
-  color: red;
+  border: 1px solid var(--Color-NotValid, red);
+  color: var(--Color-NotValid, red);
   cursor: auto;
   box-shadow: none;
 }
 
-
 .label-not-valid {
-    color: rgb(255, 0, 0);
+    color: var(--Color-NotValid, red);
 }
+
 .not-valid {
-  box-shadow: 0 0 6px 3px red;
+  box-shadow: 0 0 6px 3px var(--Color-NotValid, red);
 }

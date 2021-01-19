@@ -36,8 +36,21 @@ body {
   z-index: -100;
 }
 
+.bg::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.619);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -99;
+}
+
 #form-container {
-  width: 50%;
+  width: 40%;
   margin: 3rem auto;
   z-index: 1;
 }
@@ -54,6 +67,58 @@ body {
   font-size: 1.2rem;
 }
 
+@media (max-width: 1400px) {
+  #form-container {
+    width: 50%;
+  }
+}
+
+@media (max-width: 1200px) {
+  #form-container {
+    width: 60%;
+  }
+}
+
+@media (max-width: 1000px) {
+  #form-container {
+    width: 70%;
+  }
+}
+
+@media (max-width: 700px) {
+  #form-container {
+    width: 80%;
+  }
+}
+
+@media (max-width: 500px) {
+  #form-container {
+    width: 90%;
+  }
+
+  #title {
+    font-size: 2rem;
+  }
+
+  #description {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 350px) {
+  #form-container {
+    width: 100%;
+  }
+
+  #title {
+    font-size: 1.5rem;
+  }
+
+  #description {
+    font-size: 0.6rem;
+  }
+}
+
 form {
   margin-top: 2rem;
   background-color: var(--Color-PrimaryOpacity, rgba(54, 62, 87, 0.95));
@@ -62,6 +127,12 @@ form {
   flex-direction: column;
   color: var(--Color-Bright, white);
   border-radius: 5px;
+}
+
+@media (max-width: 350px) {
+  form {
+    border-radius: 0px;
+  }
 }
 
 .input-container {

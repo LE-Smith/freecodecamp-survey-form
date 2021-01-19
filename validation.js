@@ -42,10 +42,10 @@ numberInput.addEventListener('input', event => {
 const manageSubmit = () => {
   if (nameNotValid || emailNotValid || numberNotValid) {
     submitBtn.disabled = true;
-    submitBtn.textContent = 'Form Data is not valid!'
+    submitBtn.textContent = 'Form Data is not valid!';
   } else {
     submitBtn.disabled = false;
-    submitBtn.textContent = 'Submit'
+    submitBtn.textContent = 'Submit';
   }
 };
 
@@ -73,13 +73,13 @@ const validFn = (
 
   switch (type) {
     case 'name':
-        if (inputEl.value.trim() === '' && required) {
-          nameNotValid = true;
-          notValidFn();
-        } else {
-          nameNotValid = false;
-          validFn();
-        }
+      if (inputEl.value.trim() === '' && required) {
+        nameNotValid = true;
+        notValidFn();
+      } else {
+        nameNotValid = false;
+        validFn();
+      }
       break;
     case 'email':
       if (!emailRegEx.test(inputEl.value.trim()) && required) {
@@ -124,37 +124,36 @@ submitBtn.addEventListener('click', event => {
 
   const genderInputs = document.querySelectorAll('input[name="gender"]');
 
-  let genderInputVal = document.querySelector('input[name="gender"]:checked') ? document.querySelector('input[name="gender"]:checked').value : '';
-  let hobbiesInputs = document.querySelectorAll('input[name="hobbies"]:checked') ? document.querySelectorAll('input[name="hobbies"]:checked') : '';
+  let genderInputVal = document.querySelector('input[name="gender"]:checked')
+    ? document.querySelector('input[name="gender"]:checked').value
+    : '';
+  let hobbiesInputs = document.querySelectorAll('input[name="hobbies"]:checked')
+    ? document.querySelectorAll('input[name="hobbies"]:checked')
+    : '';
 
-  let hobbiesArr= [];
-  hobbiesInputs.forEach(hobby => hobbiesArr.push(hobby.defaultValue))
-  console.log(hobbiesInputs)
+  let hobbiesArr = [];
+  hobbiesInputs.forEach(hobby => hobbiesArr.push(hobby.defaultValue));
+  console.log(hobbiesInputs);
 
   if (!nameNotValid && !emailNotValid && !numberNotValid) {
+    const formData = {
+      name: nameInput.value,
+      email: emailInput.value,
+      number: numberInput.value,
+      favColor: favColorInput.value,
+      gender: genderInputVal,
+      hobbies: hobbiesArr.join('; '),
+      message: commentsInput.value,
+    };
+    console.log('your entered data as Object: ', formData);
 
-        const formData = {
-            name: nameInput.value,
-            email: emailInput.value,
-            number: numberInput.value,
-            favColor: favColorInput.value,
-            gender: genderInputVal,
-            hobbies: hobbiesArr.join('; '),
-            message: commentsInput.value
-        }
-      console.log('your entered data as Object: ', formData)
-
-      nameInput.value = '';
-      emailInput.value = '';
-      numberInput.value = '';
-      favColorInput.value = '';
-      genderInputs.forEach(input => input.checked = false);
-      hobbiesInputs.forEach(input => input.checked = false);
-      commentsInput.value = 'Your data was transferred successfully to the console.log ;)'
-
-
-
+    nameInput.value = '';
+    emailInput.value = '';
+    numberInput.value = '';
+    favColorInput.value = '';
+    genderInputs.forEach(input => (input.checked = false));
+    hobbiesInputs.forEach(input => (input.checked = false));
+    commentsInput.value =
+      'Your data was transferred successfully to the console.log ;)';
   }
-
-
 });

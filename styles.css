@@ -110,6 +110,8 @@ button:hover {
   box-shadow: 0 0 6px 3px rgb(146, 226, 250);
 }
 
+
+
 input[type='radio']:checked::before {
   content: '';
   border-radius: 50%;
@@ -152,5 +154,21 @@ input[type='checkbox']:checked::before {
   background-color: rgb(54, 62, 87);
   border: 1px solid white;
   color: white;
-  cursor: pointer;‚
+  cursor: pointer;
+}
+
+#submit:disabled {
+  background-color: rgb(54, 62, 87);
+  border: 1px solid red;
+  color: red;
+  cursor: auto;
+  box-shadow: none;
+}
+
+
+.label-not-valid {
+    color: rgb(255, 0, 0);
+}
+.not-valid {
+  box-shadow: 0 0 6px 3px red;
 }
